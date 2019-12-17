@@ -4,6 +4,7 @@
     margin: 30px auto;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .slidesContainer{
@@ -11,6 +12,13 @@
     height: 200px;
     position: relative;
     width: 800px;
+}
+.button{
+    cursor: pointer;
+}
+
+.button:active{
+    transform: scale(0.9);
 }
 
 

@@ -9,6 +9,7 @@ class Carousel {
     if(slidesPaths.length){
       this._slides = slidesPaths;
       this._currentIndex = 0
+      this._length = slidesPaths.length;
     }
     else{
       throw new Error()
@@ -16,9 +17,16 @@ class Carousel {
 
   }
 
+  get length(){
+    return this._length;
+  }
   get currentIndex(){
     return this._currentIndex;
   }
+  get slides(){
+    return this._slides;
+  }
+
 
   /**
    *
