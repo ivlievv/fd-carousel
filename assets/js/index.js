@@ -137,12 +137,14 @@ class CarouselController {
   goNext = () => {
 
     const currentIndex = this._carousel.currentIndex;
+    const prevIndex = Carousel.getPrevIndex(currentIndex, this._carousel.length);
+    const nextIndex = Carousel.getNextIndex(currentIndex, this._carousel.length);
+    const newNextIndex = Carousel.getNextIndex(nextIndex, this._carousel.length);
 
-    const prevSlide = document.getElementById(Carousel.getPrevIndex(currentIndex, this._carousel.length));
-    const currentSlide = document.getElementById(this._carousel.currentIndex);
-    const nextSlide = document.getElementById(Carousel.getNextIndex(currentIndex, this._carousel.length));
-    const newNext = document.getElementById(
-      Carousel.getNextIndex(Carousel.getNextIndex(currentIndex, this._carousel.length), this._carousel.length));
+    const prevSlide = document.getElementById(prevIndex);
+    const currentSlide = document.getElementById(currentIndex);
+    const nextSlide = document.getElementById(nextIndex);
+    const newNext = document.getElementById(newNextIndex);
 
     prevSlide.classList.remove('prevSlide');
     currentSlide.classList.replace('currentSlide', 'prevSlide');

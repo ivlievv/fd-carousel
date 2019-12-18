@@ -1,67 +1,72 @@
 @import "reset.css";
 
-.carouselWrapper{
+.carouselWrapper {
     margin: 30px auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.slidesContainer{
+.slidesContainer {
 
     height: 200px;
     position: relative;
     width: 800px;
 }
-.button{
+
+.button {
     cursor: pointer;
 }
 
-.button:active > img{
+.button:active > img {
     transform: scale(0.9);
 }
 
 
-.slide{
+.slide {
     display: none;
     position: absolute;
     z-index: 9;
     height: 200px;
     width: 450px;
     transition-property: all;
-    transition-delay: 0.4s;
-    transform: translateY(-50%)  scale(0.8);
-    -webkit-box-shadow: 0 0 16px 5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 0 16px 5px rgba(0,0,0,0.75);
-    box-shadow: 0 0 16px 5px rgba(0,0,0,0.75);
+    transition-duration: 0.4s;
+    -webkit-box-shadow: 0 0 16px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 16px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 16px 5px rgba(0, 0, 0, 0.75);
 }
 
-.slide > img{
+.newNextSlider {
+
+}
+
+.slide > img {
     height: inherit;
     width: inherit;
     object-fit: cover;
 }
 
-.prevSlide{
-    left: 0;
+.prevSlide {
+    right: 100%;
+    transform: translateX(100%) translateY(-50%) scale(0.8);
     top: 50%;
     display: block;
 }
 
-.nextSlide{
-    right: 0;
-    top: 50%;
-    display: block;
 
-}
 
-.currentSlide{
+.currentSlide {
     display: block;
     z-index: 10;
-    transform: translateX(-50%);
+    transform: translate(50%, 0)  scale(1);
     top: 0;
-    left: 50%;
+    right: 50%;
 }
 
+.nextSlide {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(0.8);
+    display: block;
 
-
+}
